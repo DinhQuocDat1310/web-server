@@ -1,5 +1,3 @@
-console.log("Client side js is loaded");
-
 // const weatherLocationForm = document.querySelector("form");
 
 // fetch("http://puzzle.mead.io/puzzle").then((response) => {
