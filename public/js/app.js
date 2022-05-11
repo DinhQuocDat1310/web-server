@@ -19,16 +19,14 @@ const handleLocation = addEventListener("submit", (event) => {
   message_error.textContent = "Loading...";
   message_success.textContent = "";
 
-  fetch(`http://localhost:3000/weather?address=${keySearch.value}`).then(
-    (response) => {
-      response.json().then((data) => {
-        if (data.error) {
-          message_error.textContent = data.error;
-        } else {
-          message_error.textContent = `Location: ${data.location}`;
-          message_success.textContent = `Feelslike: ${data.feelslike}`;
-        }
-      });
-    }
-  );
+  fetch(`/weather?address=${keySearch.value}`).then((response) => {
+    response.json().then((data) => {
+      if (data.error) {
+        message_error.textContent = data.error;
+      } else {
+        message_error.textContent = `Location: ${data.location}`;
+        message_success.textContent = `Feelslike: ${data.feelslike}`;
+      }
+    });
+  });
 });
